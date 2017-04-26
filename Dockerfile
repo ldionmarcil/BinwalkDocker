@@ -3,7 +3,7 @@ maintainer Gillis57<me@gill.is>
 
 RUN apt-get update
 
-RUN apt-get install -y libqt4-opengl python3-opengl python3-pyqt4 python3-pyqt4.qtopengl python3-numpy python3-scipy python3-pip git mtd-utils gzip bzip2 tar arj lhasa p7zip p7zip-full cabextract cramfsprogs cramfsswap squashfs-tools python wget zlib1g-dev liblzma-dev liblzo2-dev && \
+RUN apt-get install -y libqt4-opengl python3-opengl python3-pyqt4 python3-pyqt4.qtopengl python3-numpy python3-scipy python3-pip git mtd-utils gzip bzip2 tar arj lhasa p7zip p7zip-full cabextract cramfsprogs cramfsswap squashfs-tools python wget zlib1g-dev liblzma-dev liblzo2-dev sudo && \
 	apt-get clean
 
 RUN pip3 install pyqtgraph
@@ -27,8 +27,7 @@ RUN wget http://www.capstone-engine.org/download/3.0.1/capstone-3.0.1.tgz && \
 
 RUN git clone https://github.com/devttys0/sasquatch && \
 	cd sasquatch && \
-	make && \
-	sudo make install && \
+	./build.sh && \
 	cd / && \
 	rm -R sasquatch/
 
