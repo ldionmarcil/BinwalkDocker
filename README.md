@@ -12,7 +12,7 @@ If you want to hack firmware, binwalk can help.
 
 **Running the Binwalk Program**
 
-    docker run --rm -v gillis57/binwalk [binwalk variables] [Target Filepath]
+    docker run --rm -v $PWD:/opt gillis57/binwalk [binwalk variables] [Target Filepath]
     
 
 
